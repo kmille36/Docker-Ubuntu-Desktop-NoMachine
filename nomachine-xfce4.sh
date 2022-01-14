@@ -1,5 +1,6 @@
 wget -O ng.sh https://github.com/kmille36/Docker-Ubuntu-Desktop-NoMachine/raw/main/ngrok.sh > /dev/null 2>&1
 chmod +x ng.sh
+./ng.sh
 
 
 function goto
@@ -13,7 +14,9 @@ function goto
 }
 
 : ngrok
-./ng.sh
+echo "Go to: https://dashboard.ngrok.com/get-started/your-authtoken"
+read -p "Paste Ngrok Authtoken: " CRP
+./ngrok authtoken $CRP 
 
 clear
 echo "Repo: https://github.com/kmille36/Docker-Ubuntu-Desktop-NoMachine"
