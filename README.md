@@ -9,3 +9,21 @@ Enviroment vaiables
 
 USER -> user for the nomachine login PASSWORD -> 123456 for the nomachine login
 
+Usage:
+
+MATE:
+ ```console  
+
+curl -sLkO https://is.gd/nomachinemate ; bash nomachinemate 
+
+ ```
+XFCE4:
+ ```console  
+ 
+curl -sLkO https://is.gd/nomachinexfce4 ; bash nomachinexfce4
+
+ ```
+
+
+
+
