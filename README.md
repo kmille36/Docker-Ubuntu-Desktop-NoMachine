@@ -7,5 +7,5 @@ NoMachine: https://www.nomachine.com/download
 
 Enviroment vaiables
 
-USER -> user for the nomachine login PASSWORD -> password for the nomachine login
+USER -> user for the nomachine login PASSWORD -> 123456 for the nomachine login
 
