@@ -12,6 +12,9 @@ USER -> user for the nomachine login PASSWORD -> 123456 for the nomachine login
 Usage:
 
 MATE:
+
+![image](https://user-images.githubusercontent.com/58414694/149459685-27d51920-4616-4b3e-94de-2982f78f9295.png)
+
  ```console  
 
 curl -sLkO https://is.gd/nomachineMATE ; bash nomachineMATE
