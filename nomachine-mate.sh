@@ -2,6 +2,7 @@ wget -O ng.sh https://github.com/kmille36/Docker-Ubuntu-Desktop-NoMachine/raw/ma
 chmod +x ng.sh
 ./ng.sh
 clear
+echo "Repo: https://github.com/kmille36/Docker-Ubuntu-Desktop-NoMachine"
 echo "======================="
 echo "choose ngrok region (for better connection)."
 echo "======================="
