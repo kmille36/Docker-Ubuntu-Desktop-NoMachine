@@ -30,6 +30,6 @@ curl -sLkO https://is.gd/nomachinexfce4 ; bash nomachinexfce4
 
  ```
 
-
+Main Repo: https://github.com/kmille36/Docker-Ubuntu-Desktop-NoMachine
 
 
