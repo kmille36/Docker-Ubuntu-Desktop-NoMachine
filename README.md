@@ -18,6 +18,9 @@ curl -sLkO https://is.gd/nomachinemate ; bash nomachinemate
 
  ```
 XFCE4:
+
+![image](https://user-images.githubusercontent.com/58414694/149454644-b60208b1-6e16-43a8-8366-e386f5cee8d9.png)
+
  ```console  
  
 curl -sLkO https://is.gd/nomachinexfce4 ; bash nomachinexfce4
