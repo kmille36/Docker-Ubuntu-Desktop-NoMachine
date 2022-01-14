@@ -14,7 +14,7 @@ Usage:
 MATE:
  ```console  
 
-curl -sLkO https://is.gd/nomachinemate ; bash nomachinemate 
+curl -sLkO https://is.gd/nomachineMATE ; bash nomachinemate 
 
  ```
 XFCE4:
