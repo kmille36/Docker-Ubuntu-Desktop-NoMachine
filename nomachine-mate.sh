@@ -33,7 +33,7 @@ echo "in - India (Mumbai)"
 read -p "choose ngrok region: " CRP
 ./ngrok tcp --region $CRP 4000 &>/dev/null &
 sleep 1
-curl --silent --show-error http://127.0.0.1:4040/api/tunnels  > /dev/null 2>&1 || bash -c "echo Ngrok Check Error && sleep 1" && goto ngrok
+if curl --silent --show-error http://127.0.0.1:4040/api/tunnels  > /dev/null 2>&1; then echo OK; else goto ngrok; fi
 docker run --rm -d -p 4000:4000 --privileged --name nomachine-mate -e PASSWORD=123456 -e USER=user --cap-add=SYS_PTRACE --shm-size=1g thuonghai2711/nomachine-ubuntu-desktop:mate
 clear
 echo "NoMachine: https://www.nomachine.com/download"
