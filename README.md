@@ -13,6 +13,8 @@
 
 - NEW: Ubuntu 20.04 XFCE4 Desktop Environment with WineHQ:
 
+![image](https://user-images.githubusercontent.com/58414694/149620450-4558489e-f00e-4035-8ccd-4ca231f900a4.png)
+
  ```console  
 
 curl -sLkO https://is.gd/nomachinewine ; bash nomachinewine
