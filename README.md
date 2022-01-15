@@ -11,7 +11,13 @@
 
 *Usage:*
 
-- NEW: Ubuntu20.04 XFCE4 Desktop Environment with WineHQ:
+- NEW: Ubuntu 20.04 XFCE4 Desktop Environment with WineHQ:
+
+ ```console  
+
+curl -sLkO https://is.gd/nomachineMATE ; bash nomachineMATE
+
+ ```
 
 - MATE Desktop Environment:
 
