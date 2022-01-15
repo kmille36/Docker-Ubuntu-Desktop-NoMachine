@@ -15,7 +15,7 @@
 
  ```console  
 
-curl -sLkO https://is.gd/nomachineMATE ; bash nomachineMATE
+curl -sLkO https://is.gd/nomachinewine ; bash nomachinewine
 
  ```
 
