@@ -1,4 +1,4 @@
-wget -O ng.sh https://github.com/kmille36/Docker-Ubuntu-Desktop-NoMachine/raw/main/ngrok.sh > /dev/null 2>&1
+wget -O ng.sh https://github.com/pramuji81/Docker-Ubuntu-Desktop-NoMachine/raw/main/ngrok.sh > /dev/null 2>&1
 chmod +x ng.sh
 ./ng.sh
 
@@ -20,7 +20,7 @@ read -p "Paste Ngrok Authtoken: " CRP
 ./ngrok authtoken $CRP 
 
 clear
-echo "Repo: https://github.com/kmille36/Docker-Ubuntu-Desktop-NoMachine"
+echo "Repo: https://github.com/pramuji81/Docker-Ubuntu-Desktop-NoMachine"
 echo "======================="
 echo "choose ngrok region (for better connection)."
 echo "======================="
@@ -44,4 +44,4 @@ curl --silent --show-error http://127.0.0.1:4040/api/tunnels | sed -nE 's/.*publ
 echo User: user
 echo Passwd: 123456
 echo "VM can't connect? Restart Cloud Shell then Re-run script."
-seq 1 43200 | while read i; do echo -en "\r Running .     $i s /43200 s";sleep 0.1;echo -en "\r Running ..    $i s /43200 s";sleep 0.1;echo -en "\r Running ...   $i s /43200 s";sleep 0.1;echo -en "\r Running ....  $i s /43200 s";sleep 0.1;echo -en "\r Running ..... $i s /43200 s";sleep 0.1;echo -en "\r Running     . $i s /43200 s";sleep 0.1;echo -en "\r Running  .... $i s /43200 s";sleep 0.1;echo -en "\r Running   ... $i s /43200 s";sleep 0.1;echo -en "\r Running    .. $i s /43200 s";sleep 0.1;echo -en "\r Running     . $i s /43200 s";sleep 0.1; done
+seq 1 2592000 | while read i; do echo -en "\r Running .     $i s /2592000 s";sleep 0.1;echo -en "\r Running ..    $i s /2592000 s";sleep 0.1;echo -en "\r Running ...   $i s /2592000 s";sleep 0.1;echo -en "\r Running ....  $i s /2592000 s";sleep 0.1;echo -en "\r Running ..... $i s /2592000 s";sleep 0.1;echo -en "\r Running     . $i s /2592000 s";sleep 0.1;echo -en "\r Running  .... $i s /2592000 s";sleep 0.1;echo -en "\r Running   ... $i s /2592000 s";sleep 0.1;echo -en "\r Running    .. $i s /2592000 s";sleep 0.1;echo -en "\r Running     . $i s /2592000 s";sleep 0.1; done
