@@ -1,2 +1,2 @@
 
-docker build -t nomachine .
++ docker build -t nomachine .
