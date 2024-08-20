@@ -1,8 +1,8 @@
-FROM ubuntu:jammy
+FROM ubuntu:noble
 SHELL ["/usr/bin/bash", "-c"]
 ENV LANG=en_US.UTF-8
-ENV HOSTNAME="Jammy"
-ENV USER=ubuntu PASSWORD="!2345678a" GID=1001 UID=1001
+ENV HOSTNAME="Noble"
+ENV USER=ubuntu PASSWORD="!2345678a" GID=1002 UID=1002
 ENV NX_PUBLICKEY=""
 
 # Update package lists and installing essential packages
@@ -29,6 +29,7 @@ RUN apt-get update \
         gpg-agent \
         ssh \
         htop \
+        ncdu \
         locales \
         nano \
         net-tools \
@@ -39,12 +40,14 @@ RUN apt-get update \
         pulseaudio-utils \
         software-properties-common \
         sudo \
+        systemd systemd-sysv \
         tzdata \
         unzip \
-        vim \
+        neovim \
         wget \
         curl \
         psmisc \
+        fuse libfuse2 \
         x11-xserver-utils \
         xfce4 \
         xfce4-goodies \
@@ -85,19 +88,14 @@ RUN curl -fSL "https://www.nomachine.com/free/linux/64/deb" -o nomachine.deb && 
     /usr/NX/etc/server.cfg
 
 
-## Install Firefox for Linux from Mozilla PPA
-RUN add-apt-repository ppa:mozillateam/ppa -y && cat <<'FOT' > /etc/apt/preferences.d/mozilla-firefox && cat <<'FOT2' > /etc/apt/apt.conf.d/51unattended-upgrades-firefox && apt update && DEBIAN_FRONTEND="noninteractive" apt install firefox -y --no-install-recommends && rm -rf /var/lib/apt/lists/* && apt-get clean; apt-get autoremove -y; apt-get autoclean
-Package: *
-Pin: release o=LP-PPA-mozillateam
-Pin-Priority: 1001
-FOT
-Unattended-Upgrade::Allowed-Origins:: "LP-PPA-mozillateam:jammy";
-FOT2
+## Install Firefox for Linux from offical Mozilla Repository
+## Source: https://support.mozilla.org/en-US/kb/install-firefox-linux#w_install-firefox-deb-package-for-debian-based-distributions
+RUN install -d -m 0755 /etc/apt/keyrings && wget -q https://packages.mozilla.org/apt/repo-signing-key.gpg -O- | tee /etc/apt/keyrings/packages.mozilla.org.asc > /dev/null && echo "deb [signed-by=/etc/apt/keyrings/packages.mozilla.org.asc] https://packages.mozilla.org/apt mozilla main" | tee -a /etc/apt/sources.list.d/mozilla.list > /dev/null && echo -e 'Package: *\nPin: origin packages.mozilla.org\nPin-Priority: 1000\n' | tee /etc/apt/preferences.d/mozilla && apt update && DEBIAN_FRONTEND="noninteractive" apt install firefox -y --no-install-recommends && rm -rf /var/lib/apt/lists/* && apt-get clean; apt-get autoremove -y; apt-get autoclean 
 
 
 ## Install Chromium-based browser(s)
 
-### GoogleChrome
+### Google Chrome
 # RUN apt-get update && wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb \
 #     && sudo apt install -y ./google-chrome-stable_current_amd64.deb; \
 #     sudo apt install --assume-yes --fix-broken --no-install-recommends; \
@@ -131,10 +129,11 @@ RUN curl https://getcroc.schollz.com | bash; \
 
 
 # Copy my own files
+# COPY --chown=$UID:$GID filesystem/home/ /home/
 
 
 EXPOSE 4000
-VOLUME [/home/nomachine]
+VOLUME ["/home/nomachine"]
 
 # post-script and entrypoint
 WORKDIR /
