@@ -2,7 +2,7 @@ FROM ubuntu:noble
 SHELL ["/usr/bin/bash", "-c"]
 ENV LANG=en_US.UTF-8
 ENV HOSTNAME="Noble"
-ENV USER=ubuntu PASSWORD="!2345678a" GID=1001 UID=1001
+ENV USER=ubuntu PASSWORD="!2345678a" GID=1002 UID=1002
 ENV NX_PUBLICKEY=""
 
 # Update package lists and installing essential packages
